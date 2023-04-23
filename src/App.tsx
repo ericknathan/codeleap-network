@@ -1,9 +1,15 @@
-import { RouterProvider, ThemeProvider } from "@/providers";
+import {
+  QueryClientProvider,
+  RouterProvider,
+  ThemeProvider,
+} from "@/providers";
 
 export function App() {
   return (
-    <ThemeProvider>
-      <RouterProvider />
-    </ThemeProvider>
+    <QueryClientProvider>
+      <ThemeProvider>
+        <RouterProvider />
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }
