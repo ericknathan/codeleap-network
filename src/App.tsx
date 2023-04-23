@@ -1,5 +1,9 @@
-import { RouterProvider } from "./providers";
+import { RouterProvider, ThemeProvider } from "./providers";
 
 export function App() {
-  return <RouterProvider />;
+  return (
+    <ThemeProvider>
+      <RouterProvider />
+    </ThemeProvider>
+  );
 }
