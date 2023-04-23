@@ -1,4 +1,5 @@
 import { PostModel } from "@/@types/models";
+import { getRelativeDate } from "@/utils/date";
 
 import { IconButton } from "@/components/Form";
 import { DeleteItemModal, EditItemModal } from "@/components/Overlay/Modal";
@@ -33,7 +34,7 @@ export function PostCard({ post }: PostCardProps) {
       <CardContent>
         <div>
           <span>@{username}</span>
-          <time>{created_datetime}</time>
+          <time>{getRelativeDate(created_datetime)}</time>
         </div>
         <p>{content}</p>
       </CardContent>
