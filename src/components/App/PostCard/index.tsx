@@ -1,7 +1,7 @@
 import { PostModel } from "@/@types/models";
 
 import { IconButton } from "@/components/Form";
-import { DeleteItemModal } from "@/components/Overlay/Modal";
+import { DeleteItemModal, EditItemModal } from "@/components/Overlay/Modal";
 import { Heading } from "@/components/Text";
 
 import { CardContainer, CardContent, CardHeader } from "./styles";
@@ -23,9 +23,11 @@ export function PostCard({ post }: PostCardProps) {
               <img src="/icons/delete-trash.svg" alt="" />
             </IconButton>
           </DeleteItemModal>
+          <EditItemModal post={post}>
             <IconButton title="Edit post">
               <img src="/icons/edit-pencil.svg" alt="" />
             </IconButton>
+          </EditItemModal>
         </div>
       </CardHeader>
       <CardContent>
