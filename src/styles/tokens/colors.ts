@@ -7,6 +7,7 @@ export const colors = {
   gray400: "#999999",
   gray600: "#777777",
 
+  primary400: "#a4b8f2",
   primary500: "#7695EC",
 
   red500: "#FF5151",
