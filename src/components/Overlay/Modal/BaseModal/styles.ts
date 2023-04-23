@@ -6,7 +6,7 @@ const overlayShow = keyframes`
     opacity: 0;
   }
   to {
-    opacity: 0.5;
+    opacity: 0.8;
   }
 `;
 
@@ -25,8 +25,8 @@ export const ModalOverlay = styled(AlertDialog.Overlay)`
   position: fixed;
   inset: 0;
 
-  background-color: ${({ theme }) => theme.colors.black};
-  opacity: 0.5;
+  background-color: ${({ theme }) => theme.colors.gray600};
+  opacity: 0.8;
 
   animation: ${overlayShow} 150ms cubic-bezier(0.16, 1, 0.3, 1);
 `;
