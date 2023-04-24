@@ -36,15 +36,16 @@ const BaseButton = styled.button<ButtonProps>`
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out,
     filter 0.2s ease-in-out;
 
-  &:active {
+  &:not(:disabled):active {
     transform: scale(0.98);
   }
 
   &:disabled {
-    opacity: 0.5;
+    opacity: 0.75;
+    cursor: not-allowed;
   }
 
-  &:hover {
+  &:not(:disabled):hover {
     filter: brightness(1.1);
   }
 
