@@ -17,7 +17,7 @@ export function PostCard({ post }: PostCardProps) {
   return (
     <CardContainer>
       <CardHeader>
-        <Heading>{title}</Heading>
+        <Heading as="h3">{title}</Heading>
         <div>
           <DeleteItemModal id={id}>
             <IconButton title="Delete post">
