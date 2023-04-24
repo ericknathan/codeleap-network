@@ -72,4 +72,8 @@ export const IconButton = styled(BaseButton)`
   > * {
     width: 100%;
   }
+
+  &:focus {
+    outline-color: #FFF5;
+  }
 `;
