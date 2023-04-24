@@ -1,4 +1,5 @@
 import { Home, SignIn } from "@/pages";
+import { PrivateRouteProvider } from "@/providers";
 
 export const routes = [
   {
@@ -7,6 +8,12 @@ export const routes = [
   },
   {
     path: "/",
-    element: <Home />,
+    element: <PrivateRouteProvider />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+    ],
   },
 ];
