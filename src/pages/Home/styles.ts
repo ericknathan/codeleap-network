@@ -14,7 +14,7 @@ export const ContentContainer = styled.main`
 
   width: ${({ theme }) => theme.space[200]};
   max-width: 90vw;
-  height: 100%;
+  min-height: 100vh;
   padding-bottom: ${({ theme }) => theme.space[6]};
 
   background-color: ${({ theme }) => theme.colors.white};
@@ -22,4 +22,12 @@ export const ContentContainer = styled.main`
   > *:not(:first-child) {
     margin: 0 ${({ theme }) => theme.space[6]};
   }
+`;
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 30%;
 `;
