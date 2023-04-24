@@ -8,6 +8,8 @@ export const PageContainer = styled.div`
 `;
 
 export const ContentContainer = styled.main`
+  position: relative;
+
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.space[6]};
@@ -30,4 +32,9 @@ export const LoadingContainer = styled.div`
   align-items: center;
 
   height: 30%;
+`;
+
+export const IntersectionObservable = styled.div`
+  position: absolute;
+  bottom: 200vh;
 `;
