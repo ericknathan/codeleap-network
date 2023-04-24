@@ -5,6 +5,7 @@ import { CreatePostForm, Header, PostCard } from "@/components/App";
 import { PostModel } from "@/@types/models";
 import { getPostsListRequest } from "@/services/http/requests/post";
 import { ContentContainer, LoadingContainer, PageContainer } from "./styles";
+import { SlideDownAnimation } from "@/components/Animations";
 
 export function Home() {
   const { data, isLoading } = useQuery({
@@ -22,8 +23,10 @@ export function Home() {
             <p>Loading posts...</p>
           </LoadingContainer>
         )}
-        {data?.results?.map((post: PostModel) => (
-          <PostCard key={post.id} post={post} />
+        {data?.results?.map((post: PostModel, index: number) => (
+          <SlideDownAnimation key={post.id} delay={0.2 * index}>
+            <PostCard post={post} />
+          </SlideDownAnimation>
         ))}
       </ContentContainer>
     </PageContainer>
