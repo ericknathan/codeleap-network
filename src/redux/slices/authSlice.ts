@@ -5,7 +5,7 @@ export interface AuthState {
 }
 
 const initialState: AuthState = {
-  username: "",
+  username: localStorage.getItem("username") || "",
 };
 
 export const authSlice = createSlice({
@@ -14,9 +14,11 @@ export const authSlice = createSlice({
   reducers: {
     signIn: (state, action: PayloadAction<string>) => {
       state.username = action.payload;
+      localStorage.setItem("username", action.payload);
     },
     signOut: (state) => {
       state.username = "";
+      localStorage.removeItem("username");
     },
   },
 });
