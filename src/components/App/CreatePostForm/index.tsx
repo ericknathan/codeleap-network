@@ -1,10 +1,12 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useSelector } from "react-redux";
 
 import { Button, TextField } from "@/components/Form";
 import { Heading } from "@/components/Text";
 
+import { RootState } from "@/redux/store";
 import { createPostRequest } from "@/services/http/requests/post";
 import {
   CreatePostSchema,
@@ -14,6 +16,8 @@ import {
 import { FormContainer } from "./styles";
 
 export function CreatePostForm() {
+  const auth = useSelector((state: RootState) => state.auth);
+
   const {
     register,
     handleSubmit,
@@ -34,7 +38,7 @@ export function CreatePostForm() {
     const { title, content } = data;
 
     mutate({
-      username: "johndoe", // TODO: get username from store
+      username: auth.username,
       title,
       content,
     });
