@@ -3,13 +3,13 @@ import { useQuery } from "@tanstack/react-query";
 import { CreatePostForm, Header, PostCard } from "@/components/App";
 
 import { PostModel } from "@/@types/models";
-import { GetPostsListRequest } from "@/services/http/requests/post";
+import { getPostsListRequest } from "@/services/http/requests/post";
 import { ContentContainer, LoadingContainer, PageContainer } from "./styles";
 
 export function Home() {
   const { data, isLoading } = useQuery({
     queryKey: ["posts"],
-    queryFn: GetPostsListRequest,
+    queryFn: getPostsListRequest,
   });
 
   return (
