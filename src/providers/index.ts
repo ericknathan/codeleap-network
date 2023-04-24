@@ -1,3 +1,4 @@
+export * from "./PrivateRouteProvider";
 export * from "./QueryClientProvider";
 export * from "./ReduxProvider";
 export * from "./RouterProvider";
