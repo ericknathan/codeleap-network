@@ -1,4 +1,7 @@
+import { useSelector } from "react-redux";
+
 import { PostModel } from "@/@types/models";
+import { RootState } from "@/redux/store";
 import { getRelativeDate } from "@/utils/date";
 
 import { IconButton } from "@/components/Form";
@@ -12,24 +15,29 @@ interface PostCardProps {
 }
 
 export function PostCard({ post }: PostCardProps) {
+  const auth = useSelector((state: RootState) => state.auth);
   const { id, title, content, username, created_datetime } = post;
+
+  const isUserPostOwner = auth.username === username;
 
   return (
     <CardContainer>
       <CardHeader>
         <Heading as="h3">{title}</Heading>
-        <div>
-          <DeleteItemModal id={id}>
-            <IconButton title="Delete post">
-              <img src="/icons/delete-trash.svg" alt="" />
-            </IconButton>
-          </DeleteItemModal>
-          <EditItemModal post={post}>
-            <IconButton title="Edit post">
-              <img src="/icons/edit-pencil.svg" alt="" />
-            </IconButton>
-          </EditItemModal>
-        </div>
+        {isUserPostOwner && (
+          <div>
+            <DeleteItemModal id={id}>
+              <IconButton title="Delete post">
+                <img src="/icons/delete-trash.svg" alt="" />
+              </IconButton>
+            </DeleteItemModal>
+            <EditItemModal post={post}>
+              <IconButton title="Edit post">
+                <img src="/icons/edit-pencil.svg" alt="" />
+              </IconButton>
+            </EditItemModal>
+          </div>
+        )}
       </CardHeader>
       <CardContent>
         <div>
