@@ -22,6 +22,7 @@ export function CreatePostForm() {
     register,
     handleSubmit,
     formState: { isValid },
+    reset
   } = useForm<CreatePostSchema>({
     resolver: zodResolver(createPostSchema),
   });
@@ -42,6 +43,8 @@ export function CreatePostForm() {
       title,
       content,
     });
+
+    reset();
   };
 
   return (
