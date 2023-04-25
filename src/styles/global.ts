@@ -9,6 +9,6 @@ export const GlobalStyles = createGlobalStyle`
   }
   body {
     background: ${({ theme }) => theme.colors.gray100};
-    overflow-x: scroll;
+    overflow-y: scroll;
   }
 `;
